@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "toggle-glowing",
+	"version": "${version}",
+	"name": "Toggle Glowing",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Andante"
+	],
+	"license": "CC0-1.0",
+	"icon": "assets/toggle-glowing/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "dev.andante.toggleglowing.ToggleGlowing",
+				"adapter": "kotlin"
+			}
+		],
+		"client": [
+			{
+				"value": "dev.andante.toggleglowing.ToggleGlowingClient",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [
+		"toggle-glowing.mixins.json",
+		{
+			"config": "toggle-glowing.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabric-api": "*",
+		"fabric-language-kotlin": "*"
+	}
+}
